@@ -12,7 +12,7 @@ public class Employee {
     private double performanceRating;
     private int startYear;
     private static int count = 0;
-    public Employee(String name, String ID, double salary, String location, String extension, int Year, double performance) {
+    public Employee(String name, String ID, double salary, String location, String extension, double performance, int Year) {
         this.name = name;
         this.ID = ID;
         this.salary = salary;

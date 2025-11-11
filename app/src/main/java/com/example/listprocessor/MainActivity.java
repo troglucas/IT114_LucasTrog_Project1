@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
@@ -58,6 +59,9 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
 
@@ -68,18 +72,6 @@ public class MainActivity extends AppCompatActivity {
 
         // put some strings on the list (if the list is empty).  Note that the
         // "new" list might not be empty due to a restart of the app
-
-        if(the_list.isEmpty())
-        {
-
-            the_list.add(the_list.size(), "pizza");
-            the_list.add(the_list.size(), "crackers");
-            the_list.add(the_list.size(), "peanut butter");
-            the_list.add(the_list.size(), "jelly");
-            the_list.add(the_list.size(), "bread");
-            the_list.add(the_list.size(), "spaghetti");
-
-        }
 
     } // end onCreate
 

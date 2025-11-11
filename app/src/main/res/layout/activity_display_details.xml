@@ -32,7 +32,6 @@
         <EditText android:id="@+id/eDetail"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:inputType="number"
             android:hint="@string/detailTV" />
 
         <Button android:layout_width="wrap_content"

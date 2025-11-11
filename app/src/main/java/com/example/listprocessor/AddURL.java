@@ -10,6 +10,7 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import android.os.StrictMode;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
@@ -42,6 +43,8 @@ public class AddURL extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
     } // end onCreate
 
     public void loadWeb(View view)
@@ -72,14 +75,13 @@ public class AddURL extends AppCompatActivity {
                 int Years = Integer.parseInt(fsc.nextLine());
 
                 //create new employee and place new read data into the arguments
-                Employee e = new Employee(Name, ID, Salary, Location, Extension, Years, performance);
+                Employee e = new Employee(Name, ID, Salary, Location, Extension, performance, Years);
 
                 //add the data to the employee list
                 the_list.add(e);
             }
             fsc.close();
 
-            hideKeyboard();
             Snackbar.make(findViewById(R.id.myCoordinatorLayout),
                     the_list + " added to the list",
                     Snackbar.LENGTH_SHORT).show();

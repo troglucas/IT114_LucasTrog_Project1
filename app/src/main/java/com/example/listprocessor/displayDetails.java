@@ -58,7 +58,6 @@ public class displayDetails extends AppCompatActivity {
 
             // hide soft keyboard so snackbar is visible
 
-            hideKeyboard();
             Snackbar.make(findViewById(R.id.myCoordinatorLayout),
                     the_list.findByID(identifyID) + " removed from the list",
                     Snackbar.LENGTH_SHORT).show();

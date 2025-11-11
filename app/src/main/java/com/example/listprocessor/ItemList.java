@@ -49,6 +49,13 @@ public class ItemList extends LinkedList<String>
         }
         return null;
     }
-
+    public boolean removeById(String id) {
+        Employee e = findByID(id);
+        if (e != null) {
+            employees.remove(e);
+            return true;
+        }
+        return false;
+    }
 
 } // end ItemList

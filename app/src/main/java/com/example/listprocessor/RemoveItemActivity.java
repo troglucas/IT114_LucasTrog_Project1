@@ -51,13 +51,12 @@ public void removeItem(View view)
     // try to remove the new employee on the list
     try
     {
-        the_list.remove(the_list.findByID(removeID));
+        the_list.removeById(removeID);
 
         // hide soft keyboard so snackbar is visible
 
-        hideKeyboard();
         Snackbar.make(findViewById(R.id.myCoordinatorLayout),
-                the_list.findByID(removeID) + " removed from the list",
+                removeID + " removed from the list",
                 Snackbar.LENGTH_SHORT).show();
     }
     catch(IndexOutOfBoundsException e)

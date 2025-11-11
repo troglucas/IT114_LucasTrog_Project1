@@ -46,20 +46,22 @@ public class addNewEmployee extends AppCompatActivity {
     } // end onCreate
 
     public void addEmployee(View view)
-    {
+            throws java.io.IOException {
 
-        EditText et = findViewById(R.id.newEmployee);;
-        String AssetFile = et.getText().toString();
-        TextView tv = findViewById(R.id.display_new_employee);
+        EditText et = findViewById(R.id.newEmployee);
+        String AssetFile = et.getText().toString().trim();
+
+            if (et == null) {
+                // Defensive: avoid NPE if the TextView id is wrong in layout
+                Snackbar.make(findViewById(android.R.id.content),
+                        "edit text is empty", Snackbar.LENGTH_LONG).show();
+                return;
+            }
 
         try
         {
-
-            if (AssetFile.isEmpty()) {
-                tv.append("\n No infile name given");
-            } else {
-                AssetManager assetManager = getAssets();
-                Scanner fsc = new Scanner(assetManager.open(AssetFile));
+            AssetManager assetManager = getAssets();
+            Scanner fsc = new Scanner(assetManager.open(AssetFile));
 
                 //read the file and add the elements to the list
                 while (fsc.hasNext()) {
@@ -68,26 +70,24 @@ public class addNewEmployee extends AppCompatActivity {
                     double Salary = Double.parseDouble(fsc.nextLine());
                     String Location = fsc.nextLine();
                     String Extension = fsc.nextLine();
-                    int Years = Integer.parseInt(fsc.nextLine());
+                    int Year = Integer.parseInt(fsc.nextLine());
                     double performance = Double.parseDouble(fsc.nextLine());
 
                     //create new employee and place new read data into the arguments
-                    Employee e = new Employee(Name, ID, Salary, Location, Extension, Years, performance);
+                    Employee e = new Employee(Name, ID, Salary, Location, Extension, performance, Year);
 
                     //add the data to the employee list
                     the_list.add(e);
 
                 }
-            }
+                fsc.close();
 
-            tv.append("Scan successful: Employee added");
             // hide soft keyboard so snackbar is visible
-            hideKeyboard();
             Snackbar.make(findViewById(R.id.myCoordinatorLayout),
                     "Employee added to the list",
                     Snackbar.LENGTH_SHORT).show();
         }
-        catch(IndexOutOfBoundsException | IOException e)
+        catch(IndexOutOfBoundsException e)
         {
             hideKeyboard();
             Snackbar.make(findViewById(R.id.myCoordinatorLayout),

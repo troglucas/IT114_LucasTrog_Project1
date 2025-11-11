@@ -32,7 +32,6 @@
         <EditText android:id="@+id/remove_position"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:inputType="number"
             android:hint="@string/remove_position" />
 
         <Button android:layout_width="wrap_content"
