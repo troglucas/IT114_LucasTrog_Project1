@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Newark Museum Employees</string>
+    <string name="action_settings">Settings</string>
+    <string name="initial_message">Messages will go here.</string>
+    <string name="opt1">Show list</string>
+    <string name="opt2">Load from Web File</string>
+    <string name="opt3">Add New Employee</string>
+    <string name="opt4">Show Employee Details</string>
+    <string name="opt5">Remove Employee</string>
+    <string name="opt6">Geometric Average of Salaries</string>
+    <string name="opt7"># of High-paid Employees</string>
+    <string name="edit_item">Enter new item</string>
+    <string name="edit_position">Enter position</string>
+    <string name="remove_position">Enter ID to remove</string>
+    <string name="button_remove">Remove Employee</string>
+    <string name="button_add">Add the Item</string>
+    <string name="buttonURL">Create List</string>
+    <string name="detailButton">Display Details</string>
+    <string name="displayDetails"></string>
+    <string name="newEmployeeET">Enter asset file</string>
+    <string name="addButton">Add Employee</string>
+    <string name="displayEmployee"></string>
+    <string name="text_new_headingTV"><b><u>Enter an asset file to add one employee to the end of the list</u></b>\n\nEnter the file in the box below</string>
+    <string name="detailTV">Enter an ID to see details</string>
+    <string name="title_activity_add_item">Add Item Activity</string>
+    <string name="title_activity_remove_item">Remove Employee Activity</string>
+    <string name="URL_add"><b><u>Enter a weblink to start a brand new list</u></b>\n\nEnter the URL in the box below</string>
+    <string name="editURL">Enter Link</string>
+    <string name="text_remove_heading"><b><u>Remove a Employee from the List</u></b>\n\nEnter the Employee ID in the box below.
+        \nThen press the button.\n</string>
+    <string name="text_detail_heading"><b><u>Search an ID from the Employee list</u></b>\n\nEnter the ID in the box below to display the desired Employee Details.
+        \nThen press the button.\n</string>
+    <string name="text_add_heading"><b><u>Add a String to the List</u></b>\n\nEnter the new string in the first box,
+        and its position in the second box.\nThen press the button.\n</string>
+</resources>
